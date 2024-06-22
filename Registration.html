@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>
+            project1
+        </title>
+        <style>
+            body
+            {
+               background-color:rgb(170, 82, 170);
+               background-image:linear-gradient(to right,rgb(181, 233, 37),rgb(50, 173, 204));
+            }
+            form
+            {
+                background-color: antiquewhite;
+                display:block;
+                justify-content: space-between;
+                padding:20px;
+                width: 1000px;;
+                height:auto;
+            }
+            .space
+            {
+                width: 200px;
+                height: 35px;
+            }
+            .b1
+            {
+                background-color:rgb(0, 128, 100);
+                background-image:linear-gradient(to right,rgb(233, 204, 37),rgb(50, 204, 145));
+                border-radius: 40px;
+                padding: 15px;
+                border-spacing: 0cap;
+                border:none;
+                cursor: pointer;
+                font-size: 1em;
+                font-weight: 600;
+                width:100%;
+                height: auto;
+            }
+        </style>
+        <script>
+         function reg()
+         {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var username = document.getElementById("username").value;
+            var phno = document.getElementById("phno").value;
+            var cpassword = document.getElementById("cpassword").value;
+            var gender=document.getElementsByName("gender");
+            var Gender="";
+            document.write(`Name:${name}`);
+            document.write ("<br>");
+            document.write(`Email:${email}`);
+            document.write ("<br>");
+            document.write(`USername:${username}`);
+            document.write ("<br>");
+            document.write(`Number:${phno}`);
+            document.write ("<br>");
+            //document.write(`Gender:${Gender}`);
+            for (i = 0; i < gender.length; i++) {
+                if (gender[i].checked)
+                { 
+                Gender=gender[i].value;
+                break;
+                }
+            
+                }
+            if(name == "" || email == "" || password == "" || username == "" || phno =="" || Gender == "")
+            {
+            window.alert("Fill the requirements");
+            }
+            if(password!==cpassword)
+             {
+             window.alert("Password does not match");
+
+            }
+            else
+            {
+            window.alert("login successfully!!!");
+            }
+    
+         }
+    </script>
+    </head>
+    <body>
+            <center>
+                <h1>Registration</h1>
+                <form>
+                <br><br>
+                <div>
+                <div style="width: 40%; height: 350px; float:left;">
+                <label>Full Name</label><br>
+                <input type="text" id="name" placeholder="Enter your name" class="space"/><br><br><br>
+                <label>User Name</label><br>
+                <input type="text" id="username" placeholder="Enter your username" class="space"/><br><br><br>
+                <label>Email</label><br>
+                <input type="email" id="email" placeholder="Enter your email" class="space"/><br><br><br>
+                <div>
+                <label>Gender</label>
+                <input type="radio" id="gender" name="gender">Female
+                <input type="radio" id="gender" name="gender">male
+                </div>
+                </div>
+                <div style="width: 40%; height: 400px; float:left;">
+                <label>Password</label><br>
+                <input type="password" id="password" placeholder="Enter your Password" class="space"/><br><br><br>
+                <label>Confirm Password</label><br>
+                <input type="password" id="cpassword" placeholder="Enter your Password" class="space"/><br><br><br>
+                <label>Phone No</label><br>
+                <input type="tel" id="phno" placeholder="Enter your phone number" class="space"/>
+                </div>
+                <button class="b1" onclick="reg(event)">Register</button>
+                </div>
+                </form>
+            </center>
+    </body>
+</html>
